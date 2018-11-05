@@ -7,8 +7,8 @@ VAL = "data/val.rna.txt"
 TRAIN = "data/train.rna.txt"
 TEST = "data/test.rna.txt"
 
-loc = {0: "Nucleus",1: "Cytoplasm", 2: "Secreted", 3: "Ribosome", 4: "Endoplasmic\nreticulum", 5: "Mitochondrion"}
-
+number_to_loc = {0: "Nucleus",1: "Cytoplasm", 2: "Secreted", 3: "Ribosome", 4: "Endoplasmic\nreticulum", 5: "Mitochondrion"}
+loc_to_number = {value : str(key) for key,value in number_to_loc.items()}
 def extract_stat(file_name):
     """ Extract information from a data file"""
     sequences = []
@@ -19,23 +19,37 @@ def extract_stat(file_name):
         for line in fIn :
             splited_line = line.strip().split(',')
             sequences.append(splited_line[0])
-            categories.append(loc[int(splited_line[1])] )
+            categories.append(number_to_loc[int(splited_line[1])] )
             lengths.append(len(splited_line[0]))
             
     return(sequences, lengths, categories)
 
 
 
-def sequences_present_several_times(file_name):
-    seq,leng,cat = extract_stat(file_name)
-    print("total number " + str(len(seq)), "unique" +str(len(set(seq))))
-    uniques = list(set(seq))
-    notuniques = [i for i in seq if seq.count(i)>1]
-    for u in notuniques : 
-        print(u)
-        pos = [i for i in range(len(seq)) if seq[i]==u]
-        print([cat[i] for i in pos])
+def filter_sequences_present_several_times(file_name, output_name = None):
+    """
+        Remove sequences that were allocated to several location
+        Supress copies
+    """
+    if output_name is None : 
+        output_name = file_name.split('.')[0]+ '_filtered.txt'
 
+    with open(output_name, 'w') as fOut : 
+        seq,_,cat = extract_stat(file_name)
+        # print("total number " + str(len(seq)), "unique" +str(len(set(seq))))
+        unique_pos = [i for i in range (len(seq)) if seq.count(seq[i])==1]
+        for u in unique_pos : 
+            fOut.write(seq[u] + "," + loc_to_number[cat[u]] + "\n")
+
+        notuniques = {i:[j for j in range(len(seq)) if seq[j]==i] for i in seq if seq.count(i)>1}
+        for key,values in notuniques.items():
+            categories = [cat[j] for j in values]
+            if len(set(categories))==1:
+                fOut.write(key + "," + loc_to_number[cat[values[0]]] + "\n")
+                
+
+
+    
 def compute_size_data_set(file_names):
     nbr_rna_seq = 0
     for f in file_names :
@@ -65,9 +79,11 @@ def RNA_destination_plot(file_name):
     plt.yticks(fontsize=14)
 
 
-plt.subplot(211)
-sequence_length_plot(TRAIN)
-plt.subplot(212)
-RNA_destination_plot(TRAIN)
+# plt.subplot(211)
+# sequence_length_plot(TRAIN)
+# plt.subplot(212)
+# RNA_destination_plot(TRAIN)
 
-plt.show()
+# plt.show()
+for datas in [VAL,TRAIN,TEST] : 
+    filter_sequences_present_several_times(datas)
