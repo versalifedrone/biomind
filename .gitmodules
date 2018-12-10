@@ -1,0 +1,3 @@
+[submodule "pytorch-qrnn"]
+	path = pytorch-qrnn
+	url = https://github.com/salesforce/pytorch-qrnn.git
