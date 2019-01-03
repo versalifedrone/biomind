@@ -6,7 +6,7 @@ There is one line per example. Positions are whitespace separated. The target cl
 
 The vocabulary is A T C G, unknown positions are N.  
 
-**Classes: ** 
+**Classes:** 
 0: Nucleus  
 1: Cytoplasm  
 2: Secreted  
