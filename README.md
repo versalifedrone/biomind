@@ -4,7 +4,5 @@ This repo contains the code and the report of a final project for the course '**
 *Authors of the project:* Alessandro Montemurro, DTU Compute; Léa Riera, ; Niels, DTU Bioinformatics  
 *Supervisors:* Alexander R. Johansen; Josè  
  
- 
-The subcellular localization of produced RNA molecules is often of interest in biological research, as misplaced RNA can,  for  example,  lead  to  neurological  disease  in  humans.  
-A  novel  networktype,  **Quasi-Recurrent Neural Networks (QRNNs)** are used. QRNNs embrace the benefits of both convolutional and recurrent neural networks alike.  
-A basic QRNN was benchmarked against a similar LSTMin a simple two-class problem, reaching a higher accuracy and training more than 10 times faster at the same batch size.  Inthe full six-class problem, a complex QRNN model reached an accuracy  of  44.5%,  beating  the  largest-class  baseline  of 37.6%
+
+**Quasi-Recurrent Neural Networks (QRNNs)** are used for the RNA sub-cellular localization (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5210605/). QRNNs embrace the benefits of both convolutional and recurrent neural networks alike. QRNNs beat other networks such as LSTM in both accuracy and speed.
