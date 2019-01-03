@@ -1,4 +1,4 @@
-*Data Information:*
+##Data Information:
   
 The data is divided in 3 sets, training (70%), validation (10%) and test (20%).  
 
