@@ -2,9 +2,9 @@
 
 This repo contains the code and the report of a final project for the course '**02456 Deep Learning**' held at **DTU** - Technical University of Denmark, Lyngby, by professor Ole Winther.  
 *Authors:* 
-*Alessandro Montemurro, DTU Compute
-*Léa Riera, DTU Compute
-*Niels Mølgaard Knudsen DTU Bioengineering  
+- Alessandro Montemurro, DTU Compute
+- Léa Riera, DTU Compute
+- Niels Mølgaard Knudsen DTU Bioengineering  
 *Supervisors:* Alexander Rosenberg Johansen, José Armenteros.
  
 
