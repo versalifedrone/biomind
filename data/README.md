@@ -14,3 +14,4 @@ The vocabulary is A T C G, unknown positions are N.
 4: Endoplasmic reticulum  
 5: Mitochondrion  
 
+
