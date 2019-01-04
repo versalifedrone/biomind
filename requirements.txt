@@ -8,3 +8,4 @@ seaborn
 random
 warnings
 time
+cupy
