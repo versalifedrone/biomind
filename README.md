@@ -17,3 +17,8 @@ This repo contains the code and the report of a final project for the course '**
 QRNNs embrace the benefits of both convolutional and recurrent neural networks alike. QRNNs beat other networks such as LSTM in both accuracy and speed.  
 
 A description of QRNNs can be found in https://arxiv.org/abs/1611.01576. The PyTorch implementation follows https://github.com/salesforce/pytorch-qrnn.
+
+### Running
+Note: we are currently in the process of making a pretrained network for loading. 
+1. Install Python package requirements from requirements.txt
+2. Run notebook QRNN-train.ipynb
