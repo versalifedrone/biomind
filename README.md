@@ -21,4 +21,4 @@ A description of QRNNs can be found in https://arxiv.org/abs/1611.01576. The PyT
 ### Running
 1. A CUDA-enabled GPU is required for running the network.
 2. Install Python package requirements from requirements.txt. 
-3. Run notebook QRNN-train.ipynb. Note: a pretrained model is used by default. 
+3. Run notebook **QRNN-train.ipynb**. Note: a pretrained model is used by default. 
