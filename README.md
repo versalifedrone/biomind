@@ -1,6 +1,6 @@
 # RNA sub-cellular localization with fast-training Quasi-Recurrent Neural Networks
 
-This repo contains the code and the report of a final project for the course '**02456 Deep Learning**' held at **DTU** - Technical University of Denmark, Lyngby, by professor Ole Winther.  
+This repo contains the code and the report of a final project for the course **02456 Deep Learning** held at **DTU** - Technical University of Denmark, Lyngby, by professor Ole Winther.  
 
 ### Authors
 - Alessandro Montemurro, DTU Compute
